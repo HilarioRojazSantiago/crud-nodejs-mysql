@@ -1,0 +1,63 @@
+<%- include ('partials/_header')  %>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>n°</th>
+                        <th>Mesa</th>
+                        <th>Productos</th>
+                        <th>Estado</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data) { %>
+                        <% for (var i = 0; i < data.length; i++) { %>
+                            <tr>
+                                <td><%= (i + 1) %></td>
+                                <td><%= data[i].id_mesa %></td>
+                                <td><%= data[i].productos %></td>
+                                <td><%= data[i].estado %></td>
+                                <td><%= data[i].total %></td>
+                                <td>
+                                    <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Borrar</a>
+                                    <a href="/update/<%= data[i].id %>" class="btn btn-info">Actualizar</a>
+                                </td>
+                            </tr>    
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input type="text" name="id_mesa" placeholder="Mesa" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="productos" placeholder="Productos" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="estado" placeholder="Estado" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="total" placeholder="Total" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Agregar pedido
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include ('partials/_footer')  %>
