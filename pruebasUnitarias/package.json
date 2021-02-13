@@ -1,0 +1,18 @@
+{
+  "name": "prj_ps_902-a",
+  "version": "1.0.0",
+  "description": "Proyecto para la asignatura de pruebas de software, noveno semestre, ingenieria en coputación",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}
